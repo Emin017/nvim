@@ -1,5 +1,5 @@
 # NVIM
-## Configuration for Neovim 
+## Configuration for Neovim
 ### Installing
 Run the following command in a terminal(*nix)
 
@@ -43,13 +43,13 @@ The default leader key is `\`.
 | recent files                          |   `N`  | `<leader>sk`|  
 | find text pattern                     |   `N`  | `<leader>sm`|  
 |               **LSP**                 |        |             |
-| go to definition                      |   `N`  | `<leader>ld`|  
-| go to declaration                     |   `N`  | `<leader>lD`|  
-| show references                       |   `N`  | `<leader>lr`|  
-| show type definition                  |   `N`  | `<leader>lo`|  
+| go to definition                      |   `N`  | `<leader>gd`|  
+| go to declaration                     |   `N`  | `<leader>gD`|  
+| show references                       |   `N`  | `<leader>gr`|  
+| show type definition                  |   `N`  | `<leader>go`|  
 | show documents symbols                |   `N`  | `<leader>ls`|  
 | show workspace symbols                |   `N`  | `<leader>lS`|  
-| show diagnostics in a floating window |   `N`  | `<leader>lf`|  
+| show diagnostics in a floating window |   `N`  | `<leader>gf`|  
 
 Search for more keybindings: `<leader>sk`
 
