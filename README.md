@@ -4,7 +4,7 @@
 Run the following command in a terminal(*nix)
 
 ```shell
-git clone https://github.com/qimingchu/nvim.git ~/.config/nvim
+git clone https://github.com/Emin-stack/nvim.git ~/.config/nvim
 ```
 Then open `nvim` and enjoy it!
 
@@ -15,12 +15,12 @@ Then open `nvim` and enjoy it!
 The default leader key is `\`.
 
 - mode:
-    - N -> Normal mode
-    - I -> Insert mode
-    - V -> Visual mode
-- <C-c> means pressing <Ctrl> and c simultaneously.
-- <A-d> means pressing <Alt> and d simultaneously.
-- <leader>ps means pressing <leader> then p then s.
+    - `N` -> Normal mode
+    - `I` -> Insert mode
+    - `V` -> Visual mode
+- `<C-c>` means pressing `<Ctrl>` and `c` simultaneously.
+- `<A-d>` means pressing `<Alt>` and `d` simultaneously.
+- `<leader>ps` means pressing `<leader>` then `p` then `s`.
 
 |               Effect                  |  Mode  |  Shorcut    |
 | :-----------------------------------: | :----: | :---------: |
