@@ -1,7 +1,61 @@
 # NVIM
-## Neovim Config
+## Configuration for Neovim 
+### Installing
+Run the following command in a terminal(*nix)
 
-plugins:
+```shell
+git clone https://github.com/qimingchu/nvim.git ~/.config/nvim
+```
+Then open `nvim` and enjoy it!
+
+---
+
+### Keybindings
+
+The default leader key is `\`.
+
+- mode:
+    - N -> Normal mode
+    - I -> Insert mode
+    - V -> Visual mode
+- <C-c> means pressing <Ctrl> and c simultaneously.
+- <A-d> means pressing <Alt> and d simultaneously.
+- <leader>ps means pressing <leader> then p then s.
+
+|               Effect                  |  Mode  |  Shorcut    |
+| :-----------------------------------: | :----: | :---------: |
+| show dashboard                        |   `N`  | `<leader>a` |  
+| show explorer                         |   `N`  | `<leader>e` |  
+| kill buffer                           |   `N`  | `<leader>k` |  
+| open plugin manager                   |   `N`  | `<leader>p` |  
+| open mason                            |   `N`  | `<leader>m` |  
+| reformat code                         |   `N`  | `<leader>r` |  
+| save files                            |   `N`  | `<leader>w` |  
+| quit                                  |   `N`  | `<leader>q` |  
+|              **Search**               |        |             |
+| search for commands                   |   `N`  | `<leader>sc`|  
+| search keymaps                        |   `N`  | `<leader>sk`|  
+| search manpages                       |   `N`  | `<leader>sm`|  
+| search registers                      |   `N`  | `<leader>sm`|  
+| fine help                             |   `N`  | `<leader>sh`|  
+|            **File Search**            |        |             |
+| find files                            |   `N`  | `<leader>ff`|  
+| recent files                          |   `N`  | `<leader>sk`|  
+| find text pattern                     |   `N`  | `<leader>sm`|  
+|               **LSP**                 |        |             |
+| go to definition                      |   `N`  | `<leader>ld`|  
+| go to declaration                     |   `N`  | `<leader>lD`|  
+| show references                       |   `N`  | `<leader>lr`|  
+| show type definition                  |   `N`  | `<leader>lo`|  
+| show documents symbols                |   `N`  | `<leader>ls`|  
+| show workspace symbols                |   `N`  | `<leader>lS`|  
+| show diagnostics in a floating window |   `N`  | `<leader>lf`|  
+
+Search for more keybindings: `<leader>sk`
+
+---
+### Plugins used
+Plugins:
 - `goolord/alpha-nvim`
 - `dstein64/vim-startuptime`
 - `folke/neodev.nvim`
@@ -29,4 +83,9 @@ plugins:
 - `L3MON4D3/LuaSnip`             -- Required
 - `rafamadriz/friendly-snippets` -- Optional
 ---
-[tutorials](https://medium.com/@shaikzahid0713/the-neovim-series-32163eb1f5d0)
+
+### Inspired by
+
+- [The NEOVIM IDE Series](https://medium.com/@shaikzahid0713/the-neovim-series-32163eb1f5d0)
+
+- [nvimdots](https://github.com/ayamir/nvimdots)
