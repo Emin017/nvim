@@ -95,8 +95,17 @@ local mappings = {
     -- Language Support
     l = {
         name = "LSP",
-        i = { "<cmd>LspInfo<cr>", "Info" },
-        r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+        a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+        d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Go to Definition" },
+        D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Go to Declaration" },
+        i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Show Implementation" },
+	o = { "<cmd>lua vim.lsp.buf.type_definition()<cr>", "Type definition" },
+        r = { "<cmd>lua vim.lsp.buf.references()<cr>", "Show References" },
+        h = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
+        I = { "<cmd>LspInfo<cr>", "Info" },
+	l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
+        R = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+        f = { "<cmd>lua vim.diagnostic.open_float()<cr>", "Open Float" },
         s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
         S = {
             "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
