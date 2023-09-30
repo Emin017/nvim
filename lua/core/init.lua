@@ -22,6 +22,7 @@ require'hop'.setup()
 require "config.whichkey"
 require "config.alpha-config"
 require "config.lsp-config"
+require "config.telescope"
 
 -- set clipboard+=unnamedplus
 vim.cmd [[set clipboard+=unnamedplus]] 

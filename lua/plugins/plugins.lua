@@ -51,7 +51,9 @@ return {
 	{	
 		'nvim-telescope/telescope.nvim', tag = '0.1.2',
 		-- or                              , branch = '0.1.x',
-		dependencies = { 'nvim-lua/plenary.nvim'  },
+		dependencies = { 'nvim-lua/plenary.nvim',
+				 "nvim-telescope/telescope-fzf-native.nvim"
+		},
 		cmd = "Telescope",
 		keys = {
 			{ "<leader>fb", "<cmd>Telescope buffers<cr>",    desc = "Buffers" },
