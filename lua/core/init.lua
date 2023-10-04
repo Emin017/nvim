@@ -19,10 +19,12 @@ require('lualine').setup()
 
 require'hop'.setup()
 
-require "config.whichkey"
 require "config.alpha-config"
+-- require "config.keymap"
 require "config.lsp-config"
 require "config.telescope"
+require "config.toggleterm-config"
+require "config.whichkey"
 
 -- set clipboard+=unnamedplus
 vim.cmd [[set clipboard+=unnamedplus]] 

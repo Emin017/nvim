@@ -151,6 +151,13 @@ local mappings = {
 		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 		c = { "<cmd>Telescope commands<cr>", "Commands" },
 	},
+	-- Floating Terminal
+	t = {
+		name = "Floating Terminal",
+		o = { "<cmd>lua require('FTerm').open()<cr>", "Open Floating Terminal" },
+		c = { "<cmd>lua require('FTerm').close()<cr>", "Close Floating Terminal" },
+		t = { "<cmd>lua require('FTerm').toggle()<cr>", "Toggle Floating Terminal" },
+	},
 }
 
 which_key.setup(setup)

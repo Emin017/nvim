@@ -102,4 +102,5 @@ return {
 			})
 		end
 	},
+	{ "numToStr/FTerm.nvim" }
 }
