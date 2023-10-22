@@ -22,6 +22,7 @@ require'hop'.setup()
 require "config.alpha-config"
 -- require "config.keymap"
 require "config.lsp-config"
+require "config.mason"
 require "config.telescope"
 require "config.toggleterm-config"
 require "config.whichkey"
