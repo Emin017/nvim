@@ -114,6 +114,7 @@ local mappings = {
 	},
 
 	-- Mappings for Code
+	--[[
 	g = {
 		name = "LSP",
 		-- vim.lsp.buf
@@ -134,6 +135,7 @@ local mappings = {
 		p = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Goto Prev diagnostic" },
 		n = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Goto Next diagnostic" },
 	},
+	]]
 
 	-- Telescope
 	f = {

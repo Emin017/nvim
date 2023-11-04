@@ -26,6 +26,7 @@ require "config.mason"
 require "config.telescope"
 require "config.toggleterm-config"
 require "config.whichkey"
+require "config.coc"
 
 -- set clipboard+=unnamedplus
 vim.cmd [[set clipboard+=unnamedplus]] 

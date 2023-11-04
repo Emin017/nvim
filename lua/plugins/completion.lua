@@ -41,4 +41,5 @@ return {
 			{'rafamadriz/friendly-snippets'}, -- Optional
 		}
 	},
+	{ 'neoclide/coc.nvim' , branch = 'release'},
 }
