@@ -6,6 +6,6 @@ require("mason-lspconfig").setup {
 		"omnisharp",
 		"svlangserver",
 		-- "svls",
-		"verible"
+		-- "verible"
 	},
 }
