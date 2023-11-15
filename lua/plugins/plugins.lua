@@ -3,7 +3,11 @@ return {
 	-- Added this plugin to initial configuration
 	{
 		"goolord/alpha-nvim",
+		dependencies = { 'nvim-tree/nvim-web-devicons' },
 		lazy = true,
+		config = function ()
+			require'alpha'.setup(require'alpha.themes.startify'.config)
+		end
 	},
 
 	-- startuptime
