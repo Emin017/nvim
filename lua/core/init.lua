@@ -33,6 +33,10 @@ vim.cmd [[set clipboard+=unnamedplus]]
 vim.cmd [[set shortmess+=c]] 
 vim.cmd [[set relativenumber]] 
 vim.cmd [[set incsearch]] 
+-- set tab as 4 space
+vim.cmd [[set smartindent]]
+vim.cmd [[set shiftwidth=4]]
+vim.cmd [[set tabstop=4]]
 vim.wo.number = true
 
 -- tokynight-night theme
