@@ -54,37 +54,36 @@ The default leader key is `\`.
 Search for more keybindings: `<leader>sk`
 
 ---
-### Plugins used
-Plugins:
-- `goolord/alpha-nvim`
-- `dstein64/vim-startuptime`
-- `folke/neodev.nvim`
-- `phaazon/hop.nvim`
-- `folke/which-key.nvim`
-- `folke/neoconf.nvim`
-- `nvim-tree/nvim-tree`
-- `nvim-treesitter/nvim-treesitter`
-- `neovim/nvim-lspconfig`             -- Required
-- `williamboman/mason.nvim`'           -- Optional
-- `williamboman/mason-lspconfig.nvim`' -- Optional
+### Plugins
+- [`goolord/alpha-nvim`](https://github.com/goolord/alpha-nvim)
+- [`dstein64/vim-startuptime`](https://github.com/dstein64/vim-startuptime)
+- [`folke/neodev.nvim`](https://github.com/folke/neodev.nvim)
+- [`phaazon/hop.nvim`](https://github.com/phaazon/hop.nvim)
+- [`folke/which-key.nvim`](https://github.com/folke/which-key.nvim)
+- [`folke/neoconf.nvim`](https://github.com/folke/neoconf.nvim)
+- [`nvim-tree/nvim-tree`](https://github.com/nvim-tree/nvim-tree.lua)
+- [`nvim-treesitter/nvim-treesitter`](https://github.com/nvim-treesitter/nvim-treesitter)
+- [`neovim/nvim-lspconfig`](https://github.com/neovim/nvim-lspconfig)             -- Required
+- [`williamboman/mason.nvim`](https://github.com/williamboman/mason.nvim)           -- Optional
+- [`williamboman/mason-lspconfig.nvim`](https://github.com/williamboman/mason-lspconfig.nvim) -- Optional
 
     Autocompletion
-- `windwp/nvim-autopairs`
-- `nvim-lua/completion-nvim`
-- `steelsojka/completion-buffers`
-- `hrsh7th/nvim-cmp`        -- Required
-- `hrsh7th/cmp-nvim-lsp`     -- Required
-- `hrsh7th/cmp-buffer`       -- Optional
-- `hrsh7th/cmp-path`         -- Optional
-- `saadparwaiz1/cmp_luasnip` -- Optional
-- `hrsh7th/cmp-nvim-lua`     -- Optional
+- [`windwp/nvim-autopairs`](https://github.com/windwp/nvim-autopairs)
+- [`nvim-lua/completion-nvim`](https://github.com/nvim-lua/completion-nvim)
+- [`steelsojka/completion-buffers`](https://github.com/steelsojka/completion-buffers)
+- [`hrsh7th/nvim-cmp`](https://github.com/hrsh7th/nvim-cmp)         -- Required
+- [`hrsh7th/cmp-nvim-lsp`](https://github.com/hrsh7th/cmp-nvim-lsp) -- Required
+- [`hrsh7th/cmp-buffer`](https://github.com/hrsh7th/cmp-buffer) -- Optional
+- [`hrsh7th/cmp-path`](https://github.com/hrsh7th/cmp-path) -- Optional
+- [`saadparwaiz1/cmp_luasnip`](https://github.com/saadparwaiz1/cmp_luasnip) -- Optional
+- [`hrsh7th/cmp-nvim-lua`](https://github.com/hrsh7th/cmp-nvim-lua) -- Optional
 
     Snippets
-- `L3MON4D3/LuaSnip`             -- Required
-- `rafamadriz/friendly-snippets` -- Optional
+- [`L3MON4D3/LuaSnip`](https://github.com/L3MON4D3/LuaSnip) -- Required
+- [`rafamadriz/friendly-snippets`](https://github.com/rafamadriz/friendly-snippets) -- Optional
 ---
 
-### Inspired by
+### Acknowledged
 
 - [The NEOVIM IDE Series](https://medium.com/@shaikzahid0713/the-neovim-series-32163eb1f5d0)
 
