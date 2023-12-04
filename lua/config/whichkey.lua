@@ -85,6 +85,7 @@ local mappings = {
 
 	["a"] = { "<cmd>Alpha<cr>", "Alpha" },
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" }, -- File Explorer
+	["n"] = { "<cmd>NvimTreeFocus<cr>", "Focus on Explorer" }, -- Focus on File Explorer
 	["k"] = { "<cmd>bdelete<CR>", "Kill Buffer" }, -- Close current file
 	["m"] = { "<cmd>Mason<cr>", "Mason" },         -- LSP Manager
 	["p"] = { "<cmd>Lazy<CR>", "Plugin Manager" }, -- Invoking plugin manager
