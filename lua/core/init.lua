@@ -30,10 +30,10 @@ require "config.whichkey"
 require "config.coc"
 
 -- set clipboard+=unnamedplus
-vim.cmd [[set clipboard+=unnamedplus]] 
-vim.cmd [[set shortmess+=c]] 
-vim.cmd [[set relativenumber]] 
-vim.cmd [[set incsearch]] 
+vim.cmd [[set clipboard+=unnamedplus]]
+vim.cmd [[set shortmess+=c]]
+vim.cmd [[set relativenumber]]
+vim.cmd [[set incsearch]]
 -- set tab as 4 space
 vim.cmd [[set smartindent]]
 vim.cmd [[set shiftwidth=4]]
