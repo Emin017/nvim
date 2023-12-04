@@ -91,7 +91,6 @@ local mappings = {
 	["p"] = { "<cmd>Lazy<CR>", "Plugin Manager" }, -- Invoking plugin manager
 	["q"] = { "<cmd>wqall!<CR>", "Quit" },         -- Quit Neovim after saving the file
 	["r"] = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Reformat Code" },
-	["w"] = { "<cmd>w!<CR>", "Save" },             -- Save current file
 
 	-- Language Support
 	l = {
@@ -160,6 +159,17 @@ local mappings = {
 		o = { "<cmd>lua require('FTerm').open()<cr>", "Open Floating Terminal" },
 		c = { "<cmd>lua require('FTerm').close()<cr>", "Close Floating Terminal" },
 		t = { "<cmd>lua require('FTerm').toggle()<cr>", "Toggle Floating Terminal" },
+	},
+	-- Window
+	w = {
+		name = "Windows",
+		w = { "<cmd>wincmd w<cr>", "Other window" },
+		s = { "<cmd>wincmd s<cr>", "Split window below" },
+		v = { "<cmd>wincmd v<cr>", "Split window right" },
+		h = { "<cmd>wincmd h<cr>", "window-left"},
+		j = { "<cmd>wincmd j<cr>", "window-below"},
+		l = { "<cmd>wincmd l<cr>", "window-right"},
+		k = { "<cmd>wincmd k<cr>", "window-up"},
 	},
 }
 
