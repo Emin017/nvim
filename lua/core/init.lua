@@ -1,20 +1,6 @@
-vim.g.mapleader = " "
--- use lazy.nvim
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-	vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
-		lazypath,
-	})
-end
-vim.opt.rtp:prepend(lazypath)
-require("lazy").setup({
-	{ import = "plugins"  }
-})
+vim.g.mapleader = " " -- map <leader> to <space>
+
+require "config.lazy"
 -- config status bar
 require('lualine').setup()
 
@@ -29,7 +15,6 @@ require "config.toggleterm-config"
 require "config.whichkey"
 require "config.coc"
 
--- set clipboard+=unnamedplus
 vim.cmd [[set clipboard+=unnamedplus]]
 vim.cmd [[set shortmess+=c]]
 vim.cmd [[set relativenumber]]
