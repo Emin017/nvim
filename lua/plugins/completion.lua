@@ -42,4 +42,5 @@ return {
 		}
 	},
 	{ 'neoclide/coc.nvim' , branch = 'release'},
+	'github/copilot.vim',
 }
