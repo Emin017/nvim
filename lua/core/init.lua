@@ -13,6 +13,8 @@ require 'config.mason'
 require 'config.telescope'
 require 'config.toggleterm-config'
 require 'config.whichkey'
+require 'config.largefile'
+require 'config.accelerate'
 -- require "config.coc"
 
 vim.cmd [[set clipboard+=unnamedplus]]

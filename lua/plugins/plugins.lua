@@ -122,4 +122,5 @@ return {
 		end,
 	},
 	'rainbowhxch/accelerated-jk.nvim',
+	"LunarVim/bigfile.nvim",
 }
