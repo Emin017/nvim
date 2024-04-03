@@ -137,6 +137,15 @@ local mappings = {
 	},
 	]]
 
+	-- Hop
+	h = {
+		name = "Hop",
+		a = { "<cmd>HopAnywhere<cr>", "HopAnywhere" },
+		w = { "<cmd>HopWord<cr>", "Word" },
+		l = { "<cmd>HopLine<cr>", "Line" },
+		c = { "<cmd>HopChar1<cr>", "Char" },
+		t = { "<cmd>HopChar2<cr>", "Char2" },
+	},
 	-- Telescope
 	f = {
 		name = "File Search",
