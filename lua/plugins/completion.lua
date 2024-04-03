@@ -41,6 +41,6 @@ return {
 			{'rafamadriz/friendly-snippets'}, -- Optional
 		}
 	},
-	{ 'neoclide/coc.nvim' , branch = 'release'},
-	'github/copilot.vim',
+	-- { 'neoclide/coc.nvim' , branch = 'release'},
+	{'github/copilot.vim'},
 }

@@ -13,7 +13,7 @@ require "config.mason"
 require "config.telescope"
 require "config.toggleterm-config"
 require "config.whichkey"
-require "config.coc"
+-- require "config.coc"
 
 vim.cmd [[set clipboard+=unnamedplus]]
 vim.cmd [[set shortmess+=c]]
