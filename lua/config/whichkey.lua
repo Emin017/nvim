@@ -91,6 +91,7 @@ local mappings = {
 	["p"] = { "<cmd>Lazy<CR>", "Plugin Manager" }, -- Invoking plugin manager
 	["q"] = { "<cmd>wqall!<CR>", "Quit" },         -- Quit Neovim after saving the file
 	["r"] = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Reformat Code" },
+	["H"] = { "zt", "Move current line to the top" },
 
 	-- Language Support
 	l = {
