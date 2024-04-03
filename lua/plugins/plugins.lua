@@ -106,5 +106,6 @@ return {
 			})
 		end
 	},
-	{ "numToStr/FTerm.nvim" }
+	{ "numToStr/FTerm.nvim" },
+	{"rainbowhxch/accelerated-jk.nvim"}
 }
