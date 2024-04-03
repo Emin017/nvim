@@ -27,10 +27,10 @@ vim.api.nvim_create_user_command('FTermExit', require('FTerm').exit, { bang = tr
 vim.api.nvim_create_user_command('FTermToggle', require('FTerm').toggle, { bang = true })
 
 -- KeyBindings
-vim.keymap.set('n', '<C-h>', '<CMD>lua require("FTerm").toggle()<CR>')
-vim.keymap.set('t', '<C-h>', '<C-\\><C-n>:FTermToggle<CR>')
+vim.keymap.set('n', '<A-t>', '<CMD>lua require("FTerm").toggle()<CR>')
+vim.keymap.set('t', '<A-t>', '<C-\\><C-n>:FTermToggle<CR>')
 
-vim.keymap.set('n', '<C-i>', function()
+vim.keymap.set('n', '<A-g>', function()
     lazygit:toggle()
 end)
 

@@ -7,6 +7,8 @@ local keymap = vim.keymap -- for conciseness
 -- General Keymaps
 ---------------------
 
+keymap.set('n', 'j', '<Plug>(accelerated_jk_gj)', {})
+keymap.set('n', 'k', '<Plug>(accelerated_jk_gk)', {})
 -- use jk to exit insert mode
 keymap.set("i", "jk", "<ESC>")
 
@@ -34,3 +36,8 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 -- Floating Terminal
 keymap.set('n', '<C-g>', '<CMD>lua require("FTerm").toggle()<CR>')
 keymap.set('n', '<C-i>', '<CMD>lua require("FTerm").close()<CR>')
+
+keymap.set('n','<C-h>','<CMD>wincmd h<CR>')
+keymap.set('n','<C-j>','<CMD>wincmd j<CR>')
+keymap.set('n','<C-l>','<CMD>wincmd l<CR>')
+keymap.set('n','<C-k>','<CMD>wincmd k<CR>')
