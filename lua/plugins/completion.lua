@@ -4,7 +4,7 @@ return {
 
 	-- nvim-autopairs
 	{
-		"windwp/nvim-autopairs",
+		'windwp/nvim-autopairs',
 		event = "InsertEnter",
 		opts = {} -- this is equalent to setup({}) function
 	},
@@ -42,5 +42,5 @@ return {
 		}
 	},
 	-- { 'neoclide/coc.nvim' , branch = 'release'},
-	{'github/copilot.vim'},
+	'github/copilot.vim',
 }

@@ -2,7 +2,7 @@ return {
 	-- Alpha (Dashboard)
 	-- Added this plugin to initial configuration
 	{
-		"goolord/alpha-nvim",
+		'goolord/alpha-nvim',
 		dependencies = { 'nvim-tree/nvim-web-devicons' },
 		lazy = true,
 		config = function ()
@@ -12,9 +12,9 @@ return {
 
 	-- startuptime
 	{
-		"dstein64/vim-startuptime",
+		'dstein64/vim-startuptime',
 		-- lazy-load on a command
-		cmd = "StartupTime",
+		cmd = 'StartupTime',
 		-- init is called during startup. Configuration for vim plugins typically should be set in an init function
 		init = function()
 			vim.g.startuptime_tries = 10
@@ -22,7 +22,7 @@ return {
 	},
 
 	-- neodev
-	"folke/neodev.nvim",
+	'folke/neodev.nvim',
 
 	-- lightspeed
 	'ggandor/lightspeed.nvim', -- https://github.com/ggandor/lightspeed.nvim
@@ -34,7 +34,7 @@ return {
 
 	-- which-key
 	{
-		"folke/which-key.nvim",
+		'folke/which-key.nvim',
 		event = "VeryLazy",
 		init = function()
 			vim.o.timeout = true
@@ -49,21 +49,21 @@ return {
 	},
 
 	-- neoconf
-	{ "folke/neoconf.nvim", cmd = "Neoconf"  },
+	{ 'folke/neoconf.nvim', cmd = 'Neoconf'  },
 
 	-- telescope
-	{	
+	{
 		'nvim-telescope/telescope.nvim', tag = '0.1.2',
 		-- or                              , branch = '0.1.x',
 		dependencies = { 'nvim-lua/plenary.nvim',
-				 "nvim-telescope/telescope-fzf-native.nvim"
+				         'nvim-telescope/telescope-fzf-native.nvim',
 		},
-		cmd = "Telescope",
+		cmd = 'Telescope',
 		keys = {
-			{ "<leader>fb", "<cmd>Telescope buffers<cr>",    desc = "Buffers" },
-			{ "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
-			{ "<leader>fg", "<cmd>Telescope live_grep<cr>",  desc = "live grep" },
-			{ "<leader>fh", "<cmd>Telescope help_tags<cr>",  desc = "help" },
+			{ '<leader>fb', '<cmd>Telescope buffers<cr>',    desc = 'Buffers' },
+			{ '<leader>ff', '<cmd>Telescope find_files<cr>', desc = 'Find Files' },
+			{ '<leader>fg', '<cmd>Telescope live_grep<cr>',  desc = 'live grep' },
+			{ '<leader>fh', '<cmd>Telescope help_tags<cr>',  desc = 'help' },
 		},
 		opts = {
 			-- this is the same opts one passes to the setup() function
@@ -74,38 +74,52 @@ return {
 			extensions = {},
 		},
 	},
-
+	{
+		'nvim-telescope/telescope-fzf-native.nvim',
+		build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
+	},
 	-- nvim-tree
 	{
-		"nvim-tree/nvim-tree.lua",
-		version = "*",
+		'nvim-tree/nvim-tree.lua',
+		version = '*',
 		lazy = false,
 		keys = {
-			{ "<leader>ft", "<cmd>NvimTreeToggle<cr>", desc = "NvimTree Toggle" },
+			{ '<leader>ft', '<cmd>NvimTreeToggle<cr>', desc = 'NvimTree Toggle' },
 		},
 		dependencies = {
-			"nvim-tree/nvim-web-devicons",
+			'nvim-tree/nvim-web-devicons',
 		},
 		config = function()
-			require("nvim-tree").setup {}
+			require('nvim-tree').setup {}
 		end,
 	},
 
 	-- nvim-treesitter
 	{
-		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate",
+		'nvim-treesitter/nvim-treesitter',
+		build = ':TSUpdate',
 		config = function ()
-			local configs = require("nvim-treesitter.configs")
-
+			local configs = require('nvim-treesitter.configs')
 			configs.setup({
-				ensure_installed = { "c", "cpp", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "html","dockerfile", "make", "markdown", "nix", "scala", "verilog", "python", "latex", "matlab"},
-				sync_install = false,
+				ensure_installed = { 'c', 'cpp', 'lua', 'vim', 'vimdoc', 'query', 'elixir', 'heex', 'javascript', 'html','dockerfile', 'markdown', 'nix', 'scala', 'verilog', 'python', 'latex', 'matlab'}, 
+			sync_install = false,
 			highlight = { enable = true },
-				indent = { enable = true },
+			indent = { enable = true },
 			})
 		end
 	},
-	{ "numToStr/FTerm.nvim" },
-	{"rainbowhxch/accelerated-jk.nvim"}
+	{ 'numToStr/FTerm.nvim' },
+	{
+		'mikesmithgh/kitty-scrollback.nvim',
+		enabled = true,
+		lazy = true,
+		cmd = { 'KittyScrollbackGenerateKittens', 'KittyScrollbackCheckHealth' },
+		event = { 'User KittyScrollbackLaunch' },
+		-- version = '*', -- latest stable version, may have breaking changes if major version changed
+		-- version = '^4.0.0', -- pin major version, include fixes and features that do not have breaking changes
+		config = function()
+			require('kitty-scrollback').setup()
+		end,
+	},
+	'rainbowhxch/accelerated-jk.nvim',
 }

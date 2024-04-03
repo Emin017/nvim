@@ -2,7 +2,7 @@ return {
     -- "catppuccin/nvim"
 	{
 		-- https://github.com/folke/tokyonight.nvim#day
-		"folke/tokyonight.nvim",
+		'folke/tokyonight.nvim',
 		lazy = false,
 		priority = 1000,
 		opts = {},
