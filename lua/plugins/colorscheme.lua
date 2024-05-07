@@ -8,5 +8,9 @@ return {
 		opts = {},
 	},
 	'nvim-lualine/lualine.nvim',
+	{
+		'rose-pine/neovim',
+		name = 'rose-pine'
+	},
 }
 

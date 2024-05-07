@@ -23,9 +23,12 @@ vim.cmd [[set relativenumber]]
 vim.cmd [[set incsearch]]
 -- set tab as 4 space
 vim.cmd [[set smartindent]]
-vim.cmd [[set shiftwidth=4]]
-vim.cmd [[set tabstop=4]]
+vim.cmd [[set shiftwidth=2]]
+vim.cmd [[set tabstop=2]]
 vim.wo.number = true
 
 -- tokynight-night theme
-vim.cmd.colorscheme 'tokyonight-night'
+-- vim.cmd.colorscheme 'tokyonight-night'
+
+-- rose-pine theme
+vim.cmd("colorscheme rose-pine-dawn")
