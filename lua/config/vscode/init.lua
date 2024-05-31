@@ -1,9 +1,9 @@
 vim.g.mapleader = " " -- map <leader> to <space>
 
-require('vscode.config.lazy')
-require('vscode.plugins')
-require('vscode.config.fast-scope')
-require('vscode.config.sandwich')
+require('config.vscode.config.lazy')
+require('config.vscode.plugins')
+require('config.vscode.config.fast-scope')
+require('config.vscode.config.sandwich')
 
 vim.cmd [[set clipboard+=unnamedplus]]
 vim.cmd [[set shortmess+=c]]
