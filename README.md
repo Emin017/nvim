@@ -4,7 +4,7 @@
 Run the following command in a terminal(*nix)
 
 ```shell
-git clone https://github.com/Emin-stack/nvim.git ~/.config/nvim
+git clone https://github.com/Emin017/nvim.git ~/.config/nvim
 ```
 Then open `nvim` and enjoy it!
 
@@ -12,7 +12,7 @@ Then open `nvim` and enjoy it!
 
 ### Keybindings
 
-The default leader key is `\`.
+The default leader key is `\`, I changed it to `<Space>`.
 
 - mode:
     - `N` -> Normal mode
@@ -20,38 +20,39 @@ The default leader key is `\`.
     - `V` -> Visual mode
 - `<C-c>` means pressing `<Ctrl>` and `c` simultaneously.
 - `<A-d>` means pressing `<Alt>` and `d` simultaneously.
-- `<leader>ps` means pressing `<leader>` then `p` then `s`.
+- `<Leader>ps` means pressing `<Leader>` then `p` then `s`.
 
 |               Effect                  |  Mode  |  Shorcut    |
 | :-----------------------------------: | :----: | :---------: |
-| show dashboard                        |   `N`  | `<leader>a` |  
-| show explorer                         |   `N`  | `<leader>e` |  
-| kill buffer                           |   `N`  | `<leader>k` |  
-| open plugin manager                   |   `N`  | `<leader>p` |  
-| open mason                            |   `N`  | `<leader>m` |  
-| reformat code                         |   `N`  | `<leader>r` |  
-| save files                            |   `N`  | `<leader>w` |  
-| quit                                  |   `N`  | `<leader>q` |  
+| show dashboard                        |   `N`  | `<Leader>a` |
+| show explorer                         |   `N`  | `<Leader>e` |
+| kill buffer                           |   `N`  | `<Leader>k` |
+| open plugin manager                   |   `N`  | `<Leader>p` |
+| open mason                            |   `N`  | `<Leader>m` |
+| reformat code                         |   `N`  | `<Leader>r` |
+| quit                                  |   `N`  | `<Leader>q` |
 |              **Search**               |        |             |
-| search for commands                   |   `N`  | `<leader>sc`|  
-| search keymaps                        |   `N`  | `<leader>sk`|  
-| search manpages                       |   `N`  | `<leader>sm`|  
-| search registers                      |   `N`  | `<leader>sm`|  
-| fine help                             |   `N`  | `<leader>sh`|  
+| search for commands                   |   `N`  | `<Leader>sc`|
+| search keymaps                        |   `N`  | `<Leader>sk`|
+| search manpages                       |   `N`  | `<Leader>sm`|
+| search registers                      |   `N`  | `<Leader>sr`|
+| fine help                             |   `N`  | `<Leader>sh`|
 |            **File Search**            |        |             |
-| find files                            |   `N`  | `<leader>ff`|  
-| recent files                          |   `N`  | `<leader>sk`|  
-| find text pattern                     |   `N`  | `<leader>sm`|  
+| search colorscheme                    |   `N`  | `<Leader>fc`|
+| find files                            |   `N`  | `<Leader>ff`|
+| recent files                          |   `N`  | `<Leader>fk`|
+| find text pattern                     |   `N`  | `<Leader>ft`|
 |               **LSP**                 |        |             |
-| go to definition                      |   `N`  | `<leader>gd`|  
-| go to declaration                     |   `N`  | `<leader>gD`|  
-| show references                       |   `N`  | `<leader>gr`|  
-| show type definition                  |   `N`  | `<leader>go`|  
-| show documents symbols                |   `N`  | `<leader>ls`|  
-| show workspace symbols                |   `N`  | `<leader>lS`|  
-| show diagnostics in a floating window |   `N`  | `<leader>gf`|  
+| go to definition                      |   `N`  | `<Leader>gd`|
+| go to declaration                     |   `N`  | `<Leader>gD`|
+| show references                       |   `N`  | `<Leader>gr`|
+| show type definition                  |   `N`  | `<Leader>go`|
+| show diagnostics in a floating window |   `N`  | `<Leader>gf`|
+| show documents symbols                |   `N`  | `<Leader>ls`|
+| show workspace symbols                |   `N`  | `<Leader>lS`|
+| show lsp info                         |   `N`  | `<Leader>lI`|
 
-Search for more keybindings: `<leader>sk`
+Search for more keybindings: `<Leader>sk`
 
 ---
 ### Plugins
