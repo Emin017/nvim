@@ -1,8 +1,17 @@
--- https://medium.com/@shaikzahid0713/code-completion-for-neovim-6127401ebec2
 -- lsp-config.lua
 
+-- setup nixd for nix language server
+require'lspconfig'.nixd.setup{
+	cmd = { "nixd" },
+	filetypes = { "nix" },
+	root_dir = require'lspconfig'.util.root_pattern("flake.nix", ".git"),
+	single_file = true,
+}
+
+-- https://medium.com/@shaikzahid0713/code-completion-for-neovim-6127401ebec2
 -- Learn the keybindings, see :help lsp-zero-keybindings
 -- Learn to configure LSP servers, see :help lsp-zero-api-showcase
+
 local lsp = require('lsp-zero')
 lsp.preset('recommended')
 
