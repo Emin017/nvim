@@ -123,4 +123,24 @@ return {
 	},
 	'rainbowhxch/accelerated-jk.nvim',
 	"LunarVim/bigfile.nvim",
+	"wakatime/vim-wakatime",
+	{
+    "kdheepak/lazygit.nvim",
+    lazy = true,
+    cmd = {
+        "LazyGit",
+        "LazyGitConfig",
+        "LazyGitCurrentFile",
+        "LazyGitFilter",
+        "LazyGitFilterCurrentFile",
+    },
+    -- optional for floating window border decoration
+    dependencies = {
+        "nvim-telescope/telescope.nvim",
+        "nvim-lua/plenary.nvim",
+    },
+    config = function()
+        require("telescope").load_extension("lazygit")
+    end,
+	}
 }
