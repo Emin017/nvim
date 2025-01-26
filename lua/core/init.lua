@@ -31,4 +31,4 @@ vim.wo.number = true
 -- vim.cmd.colorscheme 'tokyonight-night'
 
 -- rose-pine theme
-vim.cmd("colorscheme rose-pine-dawn")
+vim.cmd("colorscheme rose-pine-moon")
