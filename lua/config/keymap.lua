@@ -23,8 +23,7 @@ keymap.set("n", "<leader>+", "<C-a>") -- increment
 keymap.set("n", "<leader>-", "<C-x>") -- decrement
 
 -- move cursor to windows
-keymap.set('n','<C-h>','<CMD>wincmd h<CR>')
-keymap.set('n','<C-j>','<CMD>wincmd j<CR>')
-keymap.set('n','<C-l>','<CMD>wincmd l<CR>')
-keymap.set('n','<C-k>','<CMD>wincmd k<CR>')
-
+keymap.set('n', '<C-h>', '<CMD>wincmd h<CR>')
+keymap.set('n', '<C-j>', '<CMD>wincmd j<CR>')
+keymap.set('n', '<C-l>', '<CMD>wincmd l<CR>')
+keymap.set('n', '<C-k>', '<CMD>wincmd k<CR>')

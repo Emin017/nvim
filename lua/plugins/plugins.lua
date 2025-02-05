@@ -5,11 +5,10 @@ return {
 		'goolord/alpha-nvim',
 		dependencies = { 'nvim-tree/nvim-web-devicons' },
 		lazy = true,
-		config = function ()
-			require'alpha'.setup(require'alpha.themes.startify'.config)
+		config = function()
+			require 'alpha'.setup(require 'alpha.themes.startify'.config)
 		end
 	},
-
 	-- startuptime
 	{
 		'dstein64/vim-startuptime',
@@ -20,10 +19,8 @@ return {
 			vim.g.startuptime_tries = 10
 		end,
 	},
-
 	-- neodev
 	'folke/neodev.nvim',
-
 	-- lightspeed
 	'ggandor/lightspeed.nvim', -- https://github.com/ggandor/lightspeed.nvim
 	{
@@ -31,7 +28,6 @@ return {
 		'phaazon/hop.nvim',
 		branch = 'v2',
 	},
-
 	-- which-key
 	{
 		'folke/which-key.nvim',
@@ -41,27 +37,27 @@ return {
 			vim.o.timeoutlen = 300
 		end,
 		opts = {
-			mode = {"n", "v"}, -- NORMAL mode and VISUAL mode
+			mode = { "n", "v" }, -- NORMAL mode and VISUAL mode
 			prefix = "<leader>",
-			buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-			silent = true, -- use `silent` when creating keymaps
+			buffer = nil,   -- Global mappings. Specify a buffer number for buffer local mappings
+			silent = true,  -- use `silent` when creating keymaps
 			noremap = true, -- use `noremap` when creating keymaps
-			nowait = true, -- use `nowait` when creating keymaps
+			nowait = true,  -- use `nowait` when creating keymaps
 		},
 		dependencies = {
 			{ 'echasnovski/mini.nvim', version = '*' }
 		},
 	},
-
 	-- neoconf
-	{ 'folke/neoconf.nvim', cmd = 'Neoconf'  },
-
+	{ 'folke/neoconf.nvim', cmd = 'Neoconf' },
 	-- telescope
 	{
-		'nvim-telescope/telescope.nvim', tag = '0.1.2',
+		'nvim-telescope/telescope.nvim',
+		tag = '0.1.2',
 		-- or                              , branch = '0.1.x',
-		dependencies = { 'nvim-lua/plenary.nvim',
-				         'nvim-telescope/telescope-fzf-native.nvim',
+		dependencies = {
+			'nvim-lua/plenary.nvim',
+			'nvim-telescope/telescope-fzf-native.nvim',
 		},
 		cmd = 'Telescope',
 		keys = {
@@ -81,7 +77,8 @@ return {
 	},
 	{
 		'nvim-telescope/telescope-fzf-native.nvim',
-		build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
+		build =
+		'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
 	},
 	-- nvim-tree
 	{
@@ -98,54 +95,41 @@ return {
 			require('nvim-tree').setup {}
 		end,
 	},
-
 	-- nvim-treesitter
 	{
 		'nvim-treesitter/nvim-treesitter',
 		build = ':TSUpdate',
-		config = function ()
+		config = function()
 			local configs = require('nvim-treesitter.configs')
 			configs.setup({
-				ensure_installed = { 'c', 'cpp', 'lua', 'vim', 'vimdoc', 'query', 'elixir', 'heex', 'javascript', 'html','dockerfile', 'markdown', 'nix', 'scala', 'verilog', 'python', 'latex', 'matlab'}, 
-			sync_install = false,
-			highlight = { enable = true },
-			indent = { enable = true },
+				ensure_installed = { 'c', 'cpp', 'lua', 'vim', 'vimdoc', 'elixir', 'heex', 'dockerfile', 'markdown', 'nix', 'scala', 'python' },
+				sync_install = false,
+				highlight = { enable = true },
+				indent = { enable = true },
 			})
 		end
 	},
-	{ 'numToStr/FTerm.nvim' },
 	{
-		'mikesmithgh/kitty-scrollback.nvim',
-		enabled = true,
+		"kdheepak/lazygit.nvim",
 		lazy = true,
-		cmd = { 'KittyScrollbackGenerateKittens', 'KittyScrollbackCheckHealth' },
-		event = { 'User KittyScrollbackLaunch' },
-		-- version = '*', -- latest stable version, may have breaking changes if major version changed
-		-- version = '^4.0.0', -- pin major version, include fixes and features that do not have breaking changes
+		cmd = {
+			"LazyGit",
+			"LazyGitConfig",
+			"LazyGitCurrentFile",
+			"LazyGitFilter",
+			"LazyGitFilterCurrentFile",
+		},
+		-- optional for floating window border decoration
+		dependencies = {
+			"nvim-telescope/telescope.nvim",
+			"nvim-lua/plenary.nvim",
+		},
 		config = function()
-			require('kitty-scrollback').setup()
+			require("telescope").load_extension("lazygit")
 		end,
 	},
+	'numToStr/FTerm.nvim',
 	'rainbowhxch/accelerated-jk.nvim',
 	"LunarVim/bigfile.nvim",
 	"wakatime/vim-wakatime",
-	{
-    "kdheepak/lazygit.nvim",
-    lazy = true,
-    cmd = {
-        "LazyGit",
-        "LazyGitConfig",
-        "LazyGitCurrentFile",
-        "LazyGitFilter",
-        "LazyGitFilterCurrentFile",
-    },
-    -- optional for floating window border decoration
-    dependencies = {
-        "nvim-telescope/telescope.nvim",
-        "nvim-lua/plenary.nvim",
-    },
-    config = function()
-        require("telescope").load_extension("lazygit")
-    end,
-	}
 }

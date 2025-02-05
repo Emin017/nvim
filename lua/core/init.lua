@@ -4,7 +4,7 @@ require 'config.lazy'
 -- config status bar
 require('lualine').setup()
 
-require'hop'.setup()
+require 'hop'.setup()
 
 require 'config.alpha-config'
 require 'config.keymap'

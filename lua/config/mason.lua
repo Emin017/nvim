@@ -4,8 +4,6 @@ require("mason-lspconfig").setup {
 		"lua_ls",
 		"marksman",
 		"omnisharp",
-		"svlangserver",
-		-- "svls",
 		-- "verible"
 	},
 }

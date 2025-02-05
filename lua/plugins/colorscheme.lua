@@ -1,5 +1,5 @@
 return {
-    -- "catppuccin/nvim"
+	-- "catppuccin/nvim"
 	{
 		-- https://github.com/folke/tokyonight.nvim#day
 		'folke/tokyonight.nvim',
@@ -13,4 +13,3 @@ return {
 		name = 'rose-pine'
 	},
 }
-

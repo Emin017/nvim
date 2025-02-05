@@ -1,8 +1,8 @@
 local fterm = require("FTerm")
 
 local htop = fterm:new({
-    ft = 'fterm_htop',
-    cmd = "htop"
+	ft = 'fterm_htop',
+	cmd = "htop"
 })
 
 -- require('FTerm').open()
@@ -22,5 +22,5 @@ vim.keymap.set('n', '<C-s>', '<CMD>lua require("FTerm").toggle()<CR>')
 vim.keymap.set('t', '<C-i>', '<C-\\><C-n>:FTermToggle<CR>')
 
 vim.keymap.set('n', '<C-b>', function()
-    htop:toggle()
+	htop:toggle()
 end)
