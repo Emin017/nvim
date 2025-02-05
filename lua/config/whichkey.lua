@@ -1,7 +1,7 @@
 -- https://medium.com/@shaikzahid0713/code-completion-for-neovim-6127401ebec2
 -- whichkey.lua
 
-local status_ok, which_key = pcall(require, "which-key")
+local status_ok,_ = pcall(require, "which-key")
 if not status_ok then
 	return
 end
@@ -72,116 +72,82 @@ local setup = {
 	},
 }
 
-local opts = {
-	mode = "n", -- NORMAL mode
-	prefix = "<leader>",
-	buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-	silent = true, -- use `silent` when creating keymaps
-	noremap = true, -- use `noremap` when creating keymaps
-	nowait = true, -- use `nowait` when creating keymaps
-}
 
-local mappings = {
+local mappings = {{
+	  mode = { "n", "v" }, -- NORMAL and VISUAL mode
+	  {"<leader>a",  "<cmd>Alpha<cr>", desc = "Alpha"},
+	  {"<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Explorer"},
+	  {"<leader>n", "<cmd>NvimTreeFocus<cr>", desc = "Focus on Explorer"},
+	  {"<leader>k", "<cmd>bdelete<CR>", desc = "Kill Buffer"},
+	  {"<leader>m", "<cmd>Mason<cr>", desc = "Mason"},
+	  {"<leader>p", "<cmd>Lazy<CR>", desc = "Plugin Manager"},
+	  {"<leader>q", "<cmd>wqall!<CR>", desc = "Quit"},
+	  {"<leader>r", "<cmd>lua vim.lsp.buf.format{async=true}<cr>", desc = "Reformat Code"},
+	  {"<leader>H", "zt", desc = "Move current line to the top"},
+	},
+	{
+	  mode = { "n", "v" }, -- NORMAL and VISUAL mode
+	  -- Language Support
+	  {"<leader>l", group = "LSP Info"},
+	  {"<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action"},
+	  {"<leader>ld", "<cmd>lua vim.lsp.buf.definition()<cr>", desc = "Go to Definition"},
+	  {"<leader>lD", "<cmd>lua vim.lsp.buf.declaration()<cr>", desc = "Go to Declaration"},
+	  {"<leader>li", "<cmd>lua vim.lsp.buf.implementation()<cr>", desc = "Show Implementation"},
+	  {"<leader>lo", "<cmd>lua vim.lsp.buf.type_definition()<cr>", desc = "Type definition"},
+	  {"<leader>lr", "<cmd>lua vim.lsp.buf.references()<cr>", desc = "Show References"},
+	  {"<leader>lh", "<cmd>lua vim.lsp.buf.signature_help()<cr>", desc = "Signature Help"},
+	  {"<leader>ll", "<cmd>lua vim.lsp.codelens.run()<cr>", desc = "CodeLens Action"},
+	  {"<leader>lR", "<cmd>lua vim.lsp.buf.rename()<cr>", desc = "Rename"},
+	  {"<leader>lf", "<cmd>lua vim.diagnostic.open_float()<cr>", desc = "Open Float"},
+	  {"<leader>lI", "<cmd>LspInfo<cr>", desc = "Info"},
+	  {"<leader>ls", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document Symbols"},
+	  {"<leader>lS", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Workspace Symbols"},
 
-	["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" }, -- File Explorer
-	["n"] = { "<cmd>NvimTreeFocus<cr>", "Focus on Explorer" }, -- Focus on File Explorer
-	["k"] = { "<cmd>bdelete<CR>", "Kill Buffer" }, -- Close current file
-	["m"] = { "<cmd>Mason<cr>", "Mason" },         -- LSP Manager
-	["p"] = { "<cmd>Lazy<CR>", "Plugin Manager" }, -- Invoking plugin manager
-	["q"] = { "<cmd>wqall!<CR>", "Quit" },         -- Quit Neovim after saving the file
-	["r"] = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Reformat Code" },
-	["H"] = { "zt", "Move current line to the top" },
+	  {"<leader>h", group = "Hop"},
+	  {"<leader>ha", "<cmd>HopAnywhere<cr>", desc = "HopAnywhere"},
+	  {"<leader>hw", "<cmd>HopWord<cr>", desc = "Word"},
+	  {"<leader>hl", "<cmd>HopLine<cr>", desc = "Line"},
+	  {"<leader>hc", "<cmd>HopChar1<cr>", desc = "Char"},
+	  {"<leader>ht", "<cmd>HopChar2<cr>", desc = "Char2"},
 
-	-- Language Support
-	l = {
-		name = "LSP Info",
-		-- a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-		-- d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Go to Definition" },
-		-- D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Go to Declaration" },
-		-- i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Show Implementation" },
-		-- o = { "<cmd>lua vim.lsp.buf.type_definition()<cr>", "Type definition" },
-		-- r = { "<cmd>lua vim.lsp.buf.references()<cr>", "Show References" },
-		-- h = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
-		-- l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-		-- R = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-		-- f = { "<cmd>lua vim.diagnostic.open_float()<cr>", "Open Float" },
-		I = { "<cmd>LspInfo<cr>", "Info" },
-		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-		S = {
-			"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
-			"Workspace Symbols",
-		},
-	},
+	  -- Telescope
+	  {"<leader>f", group = "File Search"},
+	  {"<leader>fc", "<cmd>Telescope colorscheme<cr>", desc = "Colorscheme"},
+	  {"<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>", desc = "Find files"},
+	  {"<leader>ft", "<cmd>Telescope live_grep <cr>", desc = "Find Text Pattern"},
+	  {"<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent Files"},
 
-	-- Mappings for Code
-	--[[
-	g = {
-		name = "LSP",
-		-- vim.lsp.buf
-		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-		d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Go to Definition" },
-		D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Go to Declaration" },
-		i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Show Implementation" },
-		o = { "<cmd>lua vim.lsp.buf.type_definition()<cr>", "Type definition" },
-		r = { "<cmd>lua vim.lsp.buf.references()<cr>", "Show References" },
-		h = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
-		R = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-		K = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Hover" },
-		-- codelens.run
-		l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-		-- vim.diagnostic
-		f = { "<cmd>lua vim.diagnostic.open_float()<cr>", "Open Float" },
-		e = { "<cmd>lua vim.diagnostic.show_line_diagnostics()<cr>", "Show diagnostic line" },
-		p = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Goto Prev diagnostic" },
-		n = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Goto Next diagnostic" },
-	},
-	]]
+	  -- Search
+	  {"<leader>s", group = "Search"},
+	  {"<leader>sh", "<cmd>Telescope help_tags<cr>", desc = "Find Help"},
+	  {"<leader>sm", "<cmd>Telescope man_pages<cr>", desc = "Man Pages"},
+	  {"<leader>sr", "<cmd>Telescope registers<cr>", desc = "Registers"},
+	  {"<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "Keymaps"},
+	  {"<leader>sc", "<cmd>Telescope commands<cr>", desc = "Commands"},
+	  -- Floating Terminal
+	  {"<leader>t", group = "Floating Terminal"},
+	  {"<leader>to", "<cmd>lua require('FTerm').open()<cr>", desc = "Open Floating Terminal"},
+	  {"<leader>tc", "<cmd>lua require('FTerm').close()<cr>", desc = "Close Floating Terminal"},
+	  {"<leader>tt", "<cmd>lua require('FTerm').toggle()<cr>", desc = "Toggle Floating Terminal"},
+	  -- Window
+	  {"<leader>w", group = "Window"},
+	  {"<leader>ws", "<cmd>wincmd s<cr>", desc = "Split window below"},
+	  {"<leader>wv", "<cmd>wincmd v<cr>", desc = "Split window right"},
+	  {"<leader>wh", "<cmd>wincmd h<cr>", desc = "Move cursor to window-left"},
+	  {"<leader>wj", "<cmd>wincmd j<cr>", desc = "Move cursor to window-below"},
+	  {"<leader>wl", "<cmd>wincmd l<cr>", desc = "Move cursor to window-right"},
+	  {"<leader>wk", "<cmd>wincmd k<cr>", desc = "Move cursor to window-up"},
+		{"<leader>we", proxy = "<C-w>=", desc = "make split windows equal width & height"},
+		{"<leader>wx", ":close<CR>", desc = "close current split window"},
+		-- window management
+		{"<leader>wo", ":tabnew<CR>", desc = "open new tab"},
+		{"<leader>wx", ":tabclose<CR>", desc = "close current tab"},
+		{"<leader>wn", ":tabn<CR>", desc = "go to next tab"},
+		{"<leader>wp", ":tabp<CR>", desc = "go to previous tab"},
+		-- LazyGit
+		{"<leader>gg", "<CMD>LazyGit<CR>", desc = "Open LazyGit"},
+	}}
 
-	-- Hop
-	h = {
-		name = "Hop",
-		a = { "<cmd>HopAnywhere<cr>", "HopAnywhere" },
-		w = { "<cmd>HopWord<cr>", "Word" },
-		l = { "<cmd>HopLine<cr>", "Line" },
-		c = { "<cmd>HopChar1<cr>", "Char" },
-		t = { "<cmd>HopChar2<cr>", "Char2" },
-	},
-	-- Telescope
-	f = {
-		name = "File Search",
-		c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-		f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Find files" },
-		t = { "<cmd>Telescope live_grep <cr>", "Find Text Pattern" },
-		r = { "<cmd>Telescope oldfiles<cr>", "Recent Files" },
-	},
-	s = {
-		name = "Search",
-		h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
-		m = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-		r = { "<cmd>Telescope registers<cr>", "Registers" },
-		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-		c = { "<cmd>Telescope commands<cr>", "Commands" },
-	},
-	-- Floating Terminal
-	t = {
-		name = "Floating Terminal",
-		o = { "<cmd>lua require('FTerm').open()<cr>", "Open Floating Terminal" },
-		c = { "<cmd>lua require('FTerm').close()<cr>", "Close Floating Terminal" },
-		t = { "<cmd>lua require('FTerm').toggle()<cr>", "Toggle Floating Terminal" },
-	},
-	-- Window
-	w = {
-		name = "Windows",
-		w = { "<cmd>wincmd w<cr>", "Other window" },
-		s = { "<cmd>wincmd s<cr>", "Split window below" },
-		v = { "<cmd>wincmd v<cr>", "Split window right" },
-		h = { "<cmd>wincmd h<cr>", "window-left"},
-		j = { "<cmd>wincmd j<cr>", "window-below"},
-		l = { "<cmd>wincmd l<cr>", "window-right"},
-		k = { "<cmd>wincmd k<cr>", "window-up"},
-	},
-}
-
-which_key.setup(setup)
-which_key.register(mappings, opts)
+local wk = require("which-key")
+wk.setup(setup)
+wk.add(mappings)

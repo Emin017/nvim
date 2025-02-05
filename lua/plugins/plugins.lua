@@ -41,11 +41,16 @@ return {
 			vim.o.timeoutlen = 300
 		end,
 		opts = {
-			-- your configuration comes here
-			-- or leave it empty to use the default settings
-			-- refer to the configuration section below
+			mode = {"n", "v"}, -- NORMAL mode and VISUAL mode
+			prefix = "<leader>",
+			buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+			silent = true, -- use `silent` when creating keymaps
+			noremap = true, -- use `noremap` when creating keymaps
+			nowait = true, -- use `nowait` when creating keymaps
 		},
-
+		dependencies = {
+			{ 'echasnovski/mini.nvim', version = '*' }
+		},
 	},
 
 	-- neoconf
