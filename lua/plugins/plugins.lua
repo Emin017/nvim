@@ -98,14 +98,24 @@ return {
 	-- nvim-treesitter
 	{
 		'nvim-treesitter/nvim-treesitter',
+		branch = 'main',
+		lazy = false,
 		build = ':TSUpdate',
+		-- VSCode provides its own syntax highlighting and indentation.
+		cond = function()
+			return not vim.g.vscode
+		end,
 		config = function()
-			local configs = require('nvim-treesitter.configs')
-			configs.setup({
-				ensure_installed = { 'c', 'cpp', 'lua', 'vim', 'vimdoc', 'elixir', 'heex', 'dockerfile', 'markdown', 'nix', 'scala', 'python' },
-				sync_install = false,
-				highlight = { enable = true },
-				indent = { enable = true },
+			local languages = { 'c', 'cpp', 'lua', 'vim', 'vimdoc', 'elixir', 'heex', 'dockerfile', 'markdown', 'nix', 'scala', 'python' }
+			require('nvim-treesitter').setup()
+			require('nvim-treesitter').install(languages)
+
+			vim.api.nvim_create_autocmd('FileType', {
+				pattern = { 'c', 'cpp', 'lua', 'vim', 'help', 'elixir', 'heex', 'dockerfile', 'markdown', 'nix', 'scala', 'python' },
+				callback = function(args)
+					vim.treesitter.start(args.buf)
+					vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+				end,
 			})
 		end
 	},
